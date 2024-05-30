@@ -1,0 +1,220 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:rocker="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button_tz1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="控制页面" />
+        <Button
+            android:id="@+id/button_tz2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="状态查看" />
+
+    </LinearLayout>
+
+    <!--数据显示-->
+    <LinearLayout
+        android:layout_width="160dp"
+        android:layout_marginTop="40dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <Switch
+            android:id="@+id/switchButton5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="全体急停" />
+        <Switch
+            android:id="@+id/switchButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="当前急停" />
+
+
+
+        <Switch
+            android:id="@+id/switchButton2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="自动/手动" />
+
+        <Switch
+            android:id="@+id/switchButton3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="水泵开关" />
+
+        <Button
+            android:id="@+id/btn_turn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="连接" />
+
+        <Button
+            android:id="@+id/btn_send"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="开始" />
+
+        <Button
+            android:id="@+id/stop_button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="0dp"
+            android:text="停止发送" />
+
+
+
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:layout_marginStart="180dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0:0:0:0:0:0:0:0.0:0" />
+
+        <SeekBar
+            android:id="@+id/seekBar"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:background="#FFFF00"
+            android:max="100"
+            android:progress="0"
+            android:secondaryProgress="0" />
+
+        <TextView
+            android:id="@+id/txt_cur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FFFF00"
+            android:text="吸附调节：" />
+
+        <SeekBar
+            android:id="@+id/seekBar2"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:background="#00FF00"
+            android:max="100"
+            android:progress="0"
+            android:secondaryProgress="0" />
+
+        <TextView
+            android:id="@+id/txt_cur2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#00FF00"
+            android:text="车速：" />
+
+        <SeekBar
+            android:id="@+id/seekBar3"
+            android:layout_width="200dp"
+            android:layout_height="60dp"
+            android:background="#FF0000"
+            android:max="100"
+            android:progress="0"
+            android:secondaryProgress="0" />
+
+        <TextView
+            android:id="@+id/txt_cur3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#FF0000"
+            android:text="清洗模块转速：" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="50dp"
+        android:layout_marginRight="50dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="XY轴数据"
+            android:textAlignment="center" />
+
+        <TextView
+            android:id="@+id/directionXY_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前方向：" />
+
+        <TextView
+            android:id="@+id/angleXY_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前角度：" />
+
+        <TextView
+            android:id="@+id/levelXY_Text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="当前偏移级别：" />
+
+
+    </LinearLayout>
+    <!--摇杆-->
+    <com.shy.rockerview.MyRockerView
+        android:id="@+id/rockerXY_View"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="375dp"
+        android:layout_marginEnd="836dp"
+        android:layout_marginRight="225dp"
+        android:layout_marginBottom="5dp"
+        rocker:areaBackground="@color/black"
+        rocker:rockerBackground="@color/white"
+        rocker:rockerCallBackMode="CALL_BACK_MODE_STATE_CHANGE"
+        rocker:rockerScale="0.5"
+        rocker:rockerSpeedLevel="10" />
+
+    <!--seekbar-->
+<!--    <com.shy.rockerview.MyRockerView-->
+<!--        android:id="@+id/seekbarVertical_View"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginLeft="25dp"-->
+<!--        rocker:areaBackground="@color/black"-->
+<!--        rocker:rockerBackground="@color/white"-->
+<!--        rocker:rockerCallBackMode="CALL_BACK_MODE_STATE_CHANGE"-->
+<!--        rocker:rockerScale="0.5"-->
+<!--        rocker:rockerSpeedLevel="10" />-->
+
+
+</RelativeLayout>

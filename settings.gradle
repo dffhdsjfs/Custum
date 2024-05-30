@@ -1,0 +1,3 @@
+include ':RockerView'
+include ':app'
+rootProject.name = "Custum"
